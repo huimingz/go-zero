@@ -132,6 +132,10 @@ func (s *Server) Stop() {
 	logx.Close()
 }
 
+func (s *Server) Router() httpx.Router {
+	return s.router
+}
+
 // Use adds the given middleware in the Server.
 func (s *Server) Use(middleware Middleware) {
 	s.ngin.use(middleware)
